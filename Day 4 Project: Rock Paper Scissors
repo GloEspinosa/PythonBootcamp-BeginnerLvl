@@ -28,6 +28,28 @@ scissors = '''
 #Write your code below this line 👇
 import random
 
+
+# VERSION 3
+# Más corto sin pegar tanta vuelta, al sustituir strings por integers.
+
+choices = [rock, paper, scissors]
+
+player_choice = int(input("What do you choose? (0 = Rock, 1 = Paper, 2 = Scissors.\n"))
+computer_choice = random.randint(0, 2)
+
+if player_choice < 0 and player_choice >= 3:
+  print("Invalid input. Computer wins!")
+else: 
+  print(choices[player_choice])
+  print("Computer chose: " + choices[computer_choice])
+  if player_choice == computer_choice:
+    print("Tie!")
+  elif player_choice == 0 and computer_choice == 2 or player_choice == 1 and computer_choice == 0 or player_choice == 2 and computer_choice == 1:
+    print("You win!")
+  else:
+    print("You lose!")
+
+
 # VERSION 2 
 # La idea aquí es reutilizar el máximo código posible y no tener que estar escribiendo
 # lo mismo muchas veces. Una de las medidas es poner como primera condición lo que en
