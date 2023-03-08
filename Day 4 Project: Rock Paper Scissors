@@ -1,0 +1,120 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+import random
+
+# VERSION 2 
+# La idea aquí es reutilizar el máximo código posible y no tener que estar escribiendo
+# lo mismo muchas veces. Una de las medidas es poner como primera condición lo que en
+# la primera versión habría sido el else final. De esta forma, si no es un input válido,
+# no imprime en pantalla la elección del PC. Al poner el else final en la versión 1, para
+# que imprimiese la elección (a excepción de un input no válido) había que volverla a 
+# utilizar en todas las condiciones anidadas.
+
+choice = [rock, paper, scissors] 
+
+computer_choice = random.choice(choice)
+player_choice = input("Rock (r), paper (p) or scissors (s) ? ").lower()
+
+accepted_inputs = ["r", "rock", "p", "paper", "s", "scissors"]
+
+win = "You win!"
+lose = "You lose!"
+tie = "Tie!"
+
+info = "Computer chose: " + computer_choice
+player = "\nYour choice: " 
+
+if player_choice not in accepted_inputs:
+  print("Invalid input. ")
+else:
+  print(info + player)
+  if player_choice == "r" or player_choice == "rock":
+    print(rock)
+    if computer_choice == choice[0]:
+      print(tie)
+    elif computer_choice == choice[1]:
+      print(lose)
+    elif computer_choice == choice[2]:
+      print(win)
+  elif player_choice == "p" or player_choice == "paper":
+    print(paper)
+    if computer_choice == choice[0]:
+      print(win)
+    elif computer_choice == choice[1]:
+      print(tie)
+    elif computer_choice == choice[2]:
+      print(lose)
+  elif player_choice == "s" or player_choice == "scissors":
+    print(scissors)
+    if computer_choice == choice [0]:
+      print(lose)
+    elif computer_choice == choice[1]:
+      print(win)
+    elif computer_choice == choice[2]:
+      print(tie)
+
+# VERSION 1
+choice = [rock, paper, scissors] 
+
+computer_choice = random.choice(choice)
+player_choice = input("Rock (r), paper (p) or scissors (s) ? ").lower()
+
+accepted_inputs = ["r", "rock", "p", "paper", "s", "scissors"]
+
+win = "You win!"
+lose = "You lose!"
+tie = "Tie!"
+
+print(computer_choice)
+if player_choice == "r" or player_choice == "rock":
+  print(rock)
+  if computer_choice == choice[0]:
+    print(tie)
+  elif computer_choice == choice[1]:
+    print(lose)
+  elif computer_choice == choice[2]:
+    print(win)
+elif player_choice == "p" or player_choice == "paper":
+  print(paper)
+  if computer_choice == choice[0]:
+    print(win)
+  elif computer_choice == choice[1]:
+    print(tie)
+  elif computer_choice == choice[2]:
+    print(lose)
+elif player_choice == "s" or player_choice == "scissors":
+  print(scissors)
+  if computer_choice == choice [0]:
+    print(lose)
+  elif computer_choice == choice[1]:
+    print(win)
+  elif computer_choice == choice[2]:
+    print(tie)
+else:
+  print("Invalid input. ")
