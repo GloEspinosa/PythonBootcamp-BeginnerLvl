@@ -1,0 +1,44 @@
+# 🚨 Don't change the code below 👇
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this row 👇
+
+# VERSION 1 - A LO COMPLICADO
+x = 'X'
+first_digit = position[0]
+second_digit = position[1]
+
+if first_digit == '1':
+    if second_digit == '1':
+        row1[0] = x
+    elif second_digit == '2':
+        row2[0] = x
+    elif second_digit == '3':
+        row3[0] = x
+elif first_digit == '2':
+    if second_digit == '1':
+        row1[1] = x
+    elif second_digit == '2':
+        row2[1] = x
+    elif second_digit == '3':
+        row3[1] = x
+elif first_digit == '3':
+    if second_digit == '1':
+        row1[2] = x
+    elif second_digit == '2':
+        row2[2] = x
+    elif second_digit == '3':
+        row3[2] = x
+else:
+    print("Please the input must be a two-digit number. First digit is column placement, and second digit is row placement.")
+
+# VERSION 2 - IMPROVEMENT DETECTED
+# column = int(position[0])
+# row = int(position[1])
+# map[column -1] [row -1] = "X"
