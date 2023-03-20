@@ -2,7 +2,11 @@ from art import logo
 print(logo)
 # https://replit.com/@Phoenix1723/Day-8-Project-Caesar-Cipher-UX-Improvement#main.py
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+from art import logo
+
+print(logo)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def caesar(new_text, places, choice):
   final_text = ""
@@ -23,9 +27,12 @@ is_working = True
 while is_working == True:
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
   text = input("Type your message:\n").lower()
-  shift = int(input("Type the shift number:\n")) % 26
+  shift = int(input("Type the shift number:\n"))
   # The program continues to work even if the user enters a shif greater than 26.
+  if shift >= 26:
+    shift %= 26
   caesar(new_text=text, places=shift, choice=direction)
   keep_going = input("Type 'yes' if you want to go again. Otherwise type 'no'. ").lower()
   if keep_going == "no":
     is_working = False
+    print("Goodbye.")
