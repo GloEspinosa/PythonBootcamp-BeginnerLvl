@@ -1,0 +1,47 @@
+# Add
+def add(num1, num2):
+  return num1 + num2
+# Subtract
+def subtract(num1, num2):
+  return num1 - num2
+# Multiply
+def multiply(num1, num2):
+  return num1 * num2
+# Divide
+def divide(num1, num2):
+  return num1 / num2
+
+
+# DICTIONARY
+
+operations = { 
+  "+": add, 
+  "-": subtract, 
+  "*": multiply, 
+  "/": divide
+}
+
+def calculator():
+  n1 = int(input("What's the first number?: "))
+  for symbol in operations:
+    print(symbol)
+
+  should_continue = True
+
+  while should_continue:
+    operation = input("Pick an operation from the list above: ")
+    n2 = int(input("What's the next number?: "))
+    calculation = operations[operation]
+    answer = calculation(n1, n2)
+  
+    print(f"{n1} {operation} {n2} = {answer}")
+
+    choosing = input(f"Type 'y' to continue with {answer}, or 'n' to start a new calculation, or anything else to exit: ")
+    if choosing == "y":
+      n1 = answer
+    else:
+      if choosing == "n":
+        calculator()
+      should_continue = False
+    
+calculator()
